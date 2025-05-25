@@ -31,11 +31,11 @@ femProject/
 
 ## 📋 API Endpoints
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET` | `/health` | Health check endpoint |
-| `GET` | `/workouts/{id}` | Get workout by ID |
-| `POST` | `/workouts` | Create new workout |
+| Method | Endpoint         | Description           |
+| ------ | ---------------- | --------------------- |
+| `GET`  | `/health`        | Health check endpoint |
+| `GET`  | `/workouts/{id}` | Get workout by ID     |
+| `POST` | `/workouts`      | Create new workout    |
 
 ## 🛠️ Prerequisites
 
@@ -46,22 +46,26 @@ femProject/
 ## 🚀 Quick Start
 
 ### 1. Clone the repository
+
 ```bash
 git clone https://github.com/shafnybuilds/femProject.git
 cd femProject
 ```
 
 ### 2. Start the database
+
 ```bash
 docker compose up -d
 ```
 
 ### 3. Install dependencies
+
 ```bash
 go mod tidy
 ```
 
 ### 4. Run the application
+
 ```bash
 # Default port 8080
 go run main.go
@@ -73,31 +77,37 @@ go run main.go -port=3000
 ## 🧪 Testing the API
 
 ### Health Check
+
 ```bash
 curl http://localhost:8080/health
 ```
 
 ### Get Workout by ID
+
 ```bash
 curl http://localhost:8080/workouts/123
 ```
 
 ### Create Workout
+
 ```bash
 curl -X POST http://localhost:8080/workouts
 ```
 
 ## 🐳 Docker Services
 
+    - Demo Configs -
+
 - **PostgreSQL 12.4-alpine** - Database server
-- **Port**: 5432
-- **Database**: postgres
-- **User**: postgres
-- **Password**: postgres
+- **Port**: \*\*\*\*
+- **Database**: \*\*\*\*
+- **User**: \*\*\*\*
+- **Password**: \*\*\*\*
 
 ## 🔧 Configuration
 
 ### Environment Variables
+
 ```bash
 # Database connection (when implemented)
 DB_HOST=localhost
@@ -108,6 +118,7 @@ DB_NAME=postgres
 ```
 
 ### Command Line Flags
+
 ```bash
 go run main.go -port=8080  # Set custom port
 ```
@@ -120,8 +131,9 @@ go run main.go -port=8080  # Set custom port
 ## 🏃‍♂️ Development
 
 ### Project follows Go best practices:
+
 - **Clean architecture** with separated concerns
-- **Handler pattern** for HTTP endpoints  
+- **Handler pattern** for HTTP endpoints
 - **Dependency injection** through Application struct
 - **Error handling** with proper HTTP status codes
 
