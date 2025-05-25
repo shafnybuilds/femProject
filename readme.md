@@ -110,11 +110,11 @@ curl -X POST http://localhost:8080/workouts
 
 ```bash
 # Database connection (when implemented)
-DB_HOST=localhost
-DB_PORT=5432
-DB_USER=postgres
-DB_PASSWORD=postgres
-DB_NAME=postgres
+DB_HOST=****
+DB_PORT=****
+DB_USER=****
+DB_PASSWORD=****
+DB_NAME=****
 ```
 
 ### Command Line Flags
