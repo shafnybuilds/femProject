@@ -19,14 +19,16 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+	// in Go unique way of closing the DB connection
+	defer app.DB.Close()
 
 	// going to bind the function HealthChcek
 	// in go functions are first class citizens, we can pass it like variables
 	r := routes.SetupRoutes(app)
-	
+
 	server := &http.Server{
 		Addr:         fmt.Sprintf(":%d", port),
-		Handler: r,
+		Handler:      r,
 		IdleTimeout:  time.Minute,
 		ReadTimeout:  10 * time.Second,
 		WriteTimeout: 30 * time.Second,
