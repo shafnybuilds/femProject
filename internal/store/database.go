@@ -4,7 +4,8 @@ import (
 	"database/sql"
 	"fmt"
 
-	_ "github.com/jackc/pgx/v4/stdlib"
+	_ "github.com/jackc/pgx/v4/stdlib" // postgres database driver
+	"github.com/pressly/goose/v3"
 )
 
 func Open() (*sql.DB, error) {
@@ -18,3 +19,15 @@ func Open() (*sql.DB, error) {
 	return db, nil
 }
 
+func Migrate(db *sql.DB, dir string) error {
+	err := goose.SetDialect("postgres")
+	if err != nil {
+		return fmt.Errorf("migrate %w", err)
+	}
+
+	err = goose.Up(db, dir)
+	if err != nil {
+		return fmt.Errorf("goose up %w", err)
+	}
+	return nil
+}
