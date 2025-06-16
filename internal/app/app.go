@@ -8,6 +8,7 @@ import (
 	"os"
 
 	"github.com/shafnybuilds/femProject/internal/api"
+	"github.com/shafnybuilds/femProject/internal/migrations"
 	"github.com/shafnybuilds/femProject/internal/store"
 )
 
@@ -21,6 +22,11 @@ func NewApplication() (*Application, error) {
 	pgDB, err := store.Open()
 	if err != nil {
 		return nil, err
+	}
+
+	err = store.MigrateFS(pgDB, migrations.FS, ".")
+	if err != nil {
+		panic(err)
 	}
 
 	logger := log.New(os.Stdout, "", log.Ldate|log.Ltime)
