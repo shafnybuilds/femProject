@@ -1,11 +1,11 @@
-# FemProject - Go Backend API
+# Workout Tracker - Go Backend API
 
 A RESTful API backend built with Go, using Chi router and PostgreSQL database for workout management.
 
 ## 🏗️ Project Structure
 
 ```
-femProject/
+workout-tracker-go/
 ├── main.go                     # Application entry point
 ├── docker-compose.yml          # PostgreSQL database setup
 ├── go.mod                      # Go module dependencies
