@@ -12,6 +12,7 @@ import (
 
 func main() {
 	var port int
+	// if someone didn't mention the port no: the default port will be 8080
 	flag.IntVar(&port, "port", 8080, "go backend server port")
 	flag.Parse()
 
