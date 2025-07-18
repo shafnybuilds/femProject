@@ -137,14 +137,6 @@ go run main.go -port=8080  # Set custom port
 - **Dependency injection** through Application struct
 - **Error handling** with proper HTTP status codes
 
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit changes (`git commit -m 'Add amazing feature'`)
-4. Push to branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
 ## 📝 License
 
 This project is licensed under the MIT License.
