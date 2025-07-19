@@ -20,7 +20,7 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	// in Go unique way of closing the DB connection
+	// in Go unique way of closing the DB connection -> with difer
 	defer app.DB.Close()
 
 	// going to bind the function HealthChcek
